@@ -8,6 +8,9 @@ The original version was made by ActionScript and ported to renderscript.
 Please visit the following URL for original code.<br>
 <a href="http://wonderfl.net/c/436W">http://wonderfl.net/c/436W</a>
 
+= Demo Video =
+<wiki:video url="http://www.youtube.com/watch?v=2YUHTy9RRNE"/>
+
 <hr>
 <br>
 <g:plusone size="medium"></g:plusone>
