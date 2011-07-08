@@ -2,12 +2,12 @@
 
 = Introduction =
 
-Gravity is a example of particle.
-
+Gravity is a example of particle.<br>
 The original version was made by ActionScript and ported to renderscript.
 
-Please visit the following URL for original code.
-
+Please visit the following URL for original code.<br>
 <a href="http://wonderfl.net/c/436W">http://wonderfl.net/c/436W</a>
 
+<hr>
+<br>
 <g:plusone size="medium"></g:plusone>
