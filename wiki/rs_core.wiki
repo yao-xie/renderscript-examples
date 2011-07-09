@@ -1,0 +1,41 @@
+#summary API specification of rs_core.rsh
+
+= Introduction =
+
+API specification of rs_core.rsh
+
+
+= Details =
+
+*Pack/UnPack Color*
+|| *Function* || *Description* ||
+|| uchar4 rsPackColorTo8888(float r, float g, float b);<br>uchar4 rsPackColorTo8888(float r, float g, float b, float a); || Pack floating point (0-1) RGB values into a uchar4.||
+|| uchar4 rsPackColorTo8888(float3 color);<br>uchar4 rsPackColorTo8888(float4 color); || Pack floating point (0-1) RGB values into a uchar4. ||
+|| float4 rsUnpackColor8888(uchar4 c); || Unpack a uchar4 color to float4.  The resulting float range will be (0-1). ||
+
+<br>
+
+*Matrix Operation*
+|| *Function* || *Description* ||
+|| void rsMatrixSet(rs_matrix4x4 `*`m, uint32_t row, uint32_t col, float v);<br>void rsMatrixSet(rs_matrix3x3 `*`m, uint32_t row, uint32_t col, float v);<br>void rsMatrixSet(rs_matrix2x2 `*`m, uint32_t row, uint32_t col, float v); || Set one element of a matrix. ||
+|| float rsMatrixGet(const rs_matrix4x4 `*`m, uint32_t row, uint32_t col);<br>float rsMatrixGet(const rs_matrix3x3 `*`m, uint32_t row, uint32_t col);<br>float rsMatrixGet(const rs_matrix2x2 `*`m, uint32_t row, uint32_t col); || Get one element of a matrix. ||
+|| void rsMatrixLoadIdentity(rs_matrix4x4 `*`m);<br>void rsMatrixLoadIdentity(rs_matrix3x3 `*`m);<br>void rsMatrixLoadIdentity(rs_matrix2x2 `*`m); || Set the elements of a matrix to the identity matrix. ||
+|| void rsMatrixLoad(rs_matrix4x4 `*`m, const float `*`v);<br>void rsMatrixLoad(rs_matrix3x3 `*`m, const float `*`v);<br>void rsMatrixLoad(rs_matrix2x2 `*`m, const float `*`v); || Set the elements of a matrix from an array of floats. ||
+|| void rsMatrixLoad(rs_matrix4x4 `*`m, const rs_matrix4x4 `*`v);<br>void rsMatrixLoad(rs_matrix4x4 `*`m, const rs_matrix3x3 `*`v);<br>void rsMatrixLoad(rs_matrix4x4 `*`m, const rs_matrix2x2 `*`v);<br>void rsMatrixLoad(rs_matrix3x3 `*`m, const rs_matrix3x3 `*`v);<br>void rsMatrixLoad(rs_matrix2x2 `*`m, const rs_matrix2x2 `*`v); || Set the elements of a matrix from another matrix. ||
+|| void rsMatrixLoadRotate(rs_matrix4x4 `*`m, float rot, float x, float y, float z); || Load a rotation matrix. ||
+|| void rsMatrixLoadScale(rs_matrix4x4 `*`m, float x, float y, float z); || Load a scale matrix. ||
+|| void rsMatrixLoadTranslate(rs_matrix4x4 `*`m, float x, float y, float z); || Load a translate matrix. ||
+|| void rsMatrixLoadMultiply(rs_matrix4x4 `*`m, const rs_matrix4x4 `*`lhs, const rs_matrix4x4 `*`rhs);<br>void rsMatrixLoadMultiply(rs_matrix3x3 `*`m, const rs_matrix3x3 `*`lhs, const rs_matrix3x3 `*`rhs);<br>void rsMatrixLoadMultiply(rs_matrix2x2 `*`m, const rs_matrix2x2 `*`lhs, const rs_matrix2x2 `*`rhs); || Load a multiply matrix. ||
+|| void rsMatrixMultiply(rs_matrix4x4 `*`m, const rs_matrix4x4 `*`rhs);<br>void rsMatrixMultiply(rs_matrix3x3 `*`m, const rs_matrix3x3 `*`rhs);<br>void rsMatrixMultiply(rs_matrix2x2 `*`m, const rs_matrix2x2 `*`rhs);<br>float4 rsMatrixMultiply(rs_matrix4x4 `*`m, float4 in);<br>float4 rsMatrixMultiply(rs_matrix4x4 `*`m, float3 in);<br>float4 rsMatrixMultiply(rs_matrix4x4 `*`m, float2 in);<br>float3 rsMatrixMultiply(rs_matrix3x3 `*`m, float3 in);<br>float3 rsMatrixMultiply(rs_matrix3x3 `*`m, float2 in);<br>float2 rsMatrixMultiply(rs_matrix2x2 `*`m, float2 in); || Multiply matrix. ||
+|| void rsMatrixRotate(rs_matrix4x4 `*`m, float rot, float x, float y, float z); || Rotate matrix. ||
+|| void rsMatrixScale(rs_matrix4x4 `*`m, float x, float y, float z); || Scale matrix. ||
+|| void rsMatrixTranslate(rs_matrix4x4 `*`m, float x, float y, float z); || Translate matrix. ||
+|| void rsMatrixLoadOrtho(rs_matrix4x4 `*`m, float left, float right, float bottom, float top, float near, float far); || Load a ortho matrix. ||
+|| void rsMatrixLoadFrustum(rs_matrix4x4 `*`m, float left, float right, float bottom, float top, float near, float far); || Load a frustum matrix. ||
+|| void rsMatrixLoadPerspective(rs_matrix4x4 `*`m, float fovy, float aspect, float near, float far); || Load a perspective matrix. ||
+|| bool rsMatrixInverse(rs_matrix4x4 `*`m);<br>bool rsMatrixInverseTranspose(rs_matrix4x4 `*`m); || Returns true if the matrix was successfully inversed. ||
+|| void rsMatrixTranspose(rs_matrix4x4 `*`m);<br>void rsMatrixTranspose(rs_matrix3x3 `*`m);<br>void rsMatrixTranspose(rs_matrix2x2 `*`m); || Transpose matrix. ||
+
+*Integer operation*
+|| *Function* || *Description* ||
+|| uint rsClamp(uint amount, uint low, uint high);<br>int rsClamp(int amount, int low, int high);<br>ushort rsClamp(ushort amount, ushort low, ushort high);<br>short rsClamp(short amount, short low, short high);<br>uchar rsClamp(uchar amount, uchar low, uchar high);<br>char rsClamp(char amount, char low, char high); || ||
