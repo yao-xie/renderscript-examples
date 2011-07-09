@@ -1,8 +1,8 @@
-#summary API reference of rs_time.rsh
+#summary API specification of rs_time.rsh
 
 = Introduction =
 
-API reference of rs_time.rsh
+API specification of rs_time.rsh
 
 = Details =
 
