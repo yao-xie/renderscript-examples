@@ -8,9 +8,15 @@ The original version was made by ActionScript and ported to renderscript.
 Please visit the following URL for original code.<br>
 <a href="http://wonderfl.net/c/436W">http://wonderfl.net/c/436W</a>
 
+<br>
 = Demo Video =
 <wiki:video url="http://www.youtube.com/watch?v=2YUHTy9RRNE"/>
 
+<br>
+= Source code =
+<a href="http://code.google.com/p/renderscript-examples/source/browse/#svn%2Ftrunk%2FGravity">http://code.google.com/p/renderscript-examples/source/browse/#svn%2Ftrunk%2FGravity</a>
+
+<br>
 <hr>
 <br>
 <g:plusone size="medium"></g:plusone>
