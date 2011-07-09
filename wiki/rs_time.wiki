@@ -1,0 +1,14 @@
+#summary API reference of rs_time.rsh
+
+= Introduction =
+
+API reference of rs_time.rsh
+
+= Details =
+
+|| *Function* || *Description* ||
+|| rs_time_t rsTime(rs_time_t `*`timer); || Get time. ||
+|| rs_tm `*`rsLocaltime(rs_tm `*`local, const rs_time_t `*`timer); || Get Local time. ||
+|| int64_t rsUptimeMillis(void); || Return the current system clock in milliseconds. ||
+|| int64_t rsUptimeNanos(void); || Return the current system clock in nanoseconds. ||
+|| float rsGetDt(void); || Return the time in seconds since function was last called in this script.||
