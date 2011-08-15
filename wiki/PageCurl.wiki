@@ -1,13 +1,22 @@
-#summary One-sentence summary of this page.
+#summary PageCurl example
 
 = Introduction =
 
-Add your content here.
+PageCurl is a example of page curl effect.<br>
+The original version was made by ActionScript /w Papervision3D and ported to renderscript.
 
+Please visit the following URL for original code.<br>
+<a href="http://www.zeropointnine.com/blog/3d-page-curl-effect-updated/">http://www.zeropointnine.com/blog/3d-page-curl-effect-updated/</a>
 
-= Details =
+<br>
+= Demo Video =
+<wiki:video url="http://www.youtube.com/watch?v=JkOs3axATQA"/>
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+<br>
+= Source code =
+<a href="http://code.google.com/p/renderscript-examples/source/browse/#svn%2Ftrunk%2FPageCurl">http://code.google.com/p/renderscript-examples/source/browse/#svn%2Ftrunk%2FPageCurl</a>
+
+<br>
+<hr>
+<br>
+<g:plusone size="medium"></g:plusone>
