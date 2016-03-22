@@ -1,0 +1,24 @@
+# Introduction #
+
+API specification of rs\_math.rsh
+
+
+# Details #
+
+| **Function** | **Description** |
+|:-------------|:----------------|
+| void rsSetObject(rs\_element `*`dst, rs\_element src);<br>void rsSetObject(rs_type <code>*</code>dst, rs_type src);<br>void rsSetObject(rs_allocation <code>*</code>dst, rs_allocation src);<br>void rsSetObject(rs_sampler <code>*</code>dst, rs_sampler src);<br>void rsSetObject(rs_script <code>*</code>dst, rs_script src);<br>void rsSetObject(rs_mesh <code>*</code>dst, rs_mesh src);<br>void rsSetObject(rs_program_fragment <code>*</code>dst, rs_program_fragment src);<br>void rsSetObject(rs_program_vertex <code>*</code>dst, rs_program_vertex src);<br>void rsSetObject(rs_program_raster <code>*</code>dst, rs_program_raster src);<br>void rsSetObject(rs_program_store <code>*</code>dst, rs_program_store src);<br>void rsSetObject(rs_font <code>*</code>dst, rs_font src); <table><thead><th> Copy reference to the specified object. </th></thead><tbody>
+<tr><td> void rsClearObject(rs_element <code>*</code>dst);<br>void rsClearObject(rs_type <code>*</code>dst);<br>void rsClearObject(rs_allocation <code>*</code>dst);<br>void rsClearObject(rs_sampler <code>*</code>dst);<br>void rsClearObject(rs_script <code>*</code>dst);<br>void rsClearObject(rs_mesh <code>*</code>dst);<br>void rsClearObject(rs_program_fragment <code>*</code>dst);<br>void rsClearObject(rs_program_vertex <code>*</code>dst);<br>void rsClearObject(rs_program_raster <code>*</code>dst);<br>void rsClearObject(rs_program_store <code>*</code>dst);<br>void rsClearObject(rs_font <code>*</code>dst); </td><td> Sets the object to NULL. </td></tr>
+<tr><td> bool rsIsObject(rs_element);<br>bool rsIsObject(rs_type);<br>bool rsIsObject(rs_allocation);<br>bool rsIsObject(rs_sampler);<br>bool rsIsObject(rs_script);<br>bool rsIsObject(rs_mesh);<br>bool rsIsObject(rs_program_fragment);<br>bool rsIsObject(rs_program_vertex);<br>bool rsIsObject(rs_program_raster);<br>bool rsIsObject(rs_program_store);<br>bool rsIsObject(rs_font); </td><td> Tests if the object is valid.  Returns true if the object is valid, false if it is NULL. </td></tr>
+<tr><td> rs_allocation rsGetAllocation(const void <code>*</code>); </td><td> Returns the Allocation for a given pointer.<br>The pointer should point within a valid allocation.<br>The results are undefined if the pointer is not from a valid allocation. </td></tr>
+<tr><td> uint32_t rsAllocationGetDimX(rs_allocation); </td><td>Query the dimension of an allocation. </td></tr>
+<tr><td> uint32_t rsAllocationGetDimY(rs_allocation); </td><td> Query the dimension of an allocation. </td></tr>
+<tr><td> uint32_t rsAllocationGetDimZ(rs_allocation); </td><td> Query the dimension of an allocation. </td></tr>
+<tr><td> uint32_t rsAllocationGetDimLOD(rs_allocation); </td><td> Query an allocation for the presence of more than one LOD. </td></tr>
+<tr><td> uint32_t rsAllocationGetDimFaces(rs_allocation); </td><td> Query an allocation for the presence of more than one face. </td></tr>
+<tr><td> void<code>*</code> rsGetElementAt(rs_allocation, uint32_t x);<br>void<code>*</code> rsGetElementAt(rs_allocation, uint32_t x, uint32_t y);<br>void<code>*</code> rsGetElementAt(rs_allocation, uint32_t x, uint32_t y, uint32_t z); </td><td> Extract a single element from an allocation. </td></tr>
+<tr><td> int rsRand(int max_value);<br>int rsRand(int min_value, int max_value);<br>int rsRand(float max_value);<br>float rsRand(float min_value, float max_value); </td><td> Return a random value between 0 (or min_value) and max_malue. </td></tr>
+<tr><td> float rsFrac(float); </td><td> return the fractional part of a float<br>min(v - ((int)floor(v)), 0x1.fffffep-1f); </td></tr>
+<tr><td> bool rsSendToClient(int cmdID);<br>bool rsSendToClient(int cmdID, const void <code>*</code>data, uint len); </td><td> Send a message back to the client.<br>Will not block and returns true if the message was sendable and false if the fifo was full.<br>A message ID is required.  Data payload is optional.</td></tr>
+<tr><td> void rsSendToClientBlocking(int cmdID);<br>void rsSendToClientBlocking(int cmdID, const void <code>*</code>data, uint len); </td><td> Send a message back to the client, blocking until the message is queued.<br>A message ID is required.  Data payload is optional. </td></tr>
+<tr><td> void rsForEach(rs_script script, rs_allocation input,<br>rs_allocation output, const void <code>*</code>usrData);<br>void rsForEach(rs_script script, rs_allocation input,<br>rs_allocation output, const void <code>*</code>usrData, const rs_script_call_t <code>*</code>); </td><td>                 </td></tr>
